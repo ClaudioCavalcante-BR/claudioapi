@@ -1,0 +1,4 @@
+Scania P 25;2024;350000.00;909090XX;Leve;3001;22.35;true;Operacoes Florestais;Rua das Flores;1500;29.1500-200;Vila Velha;Praia das Gaivotas;Espirito Santo;ES;Próximo a Churrascaria do Zé
+Volvo VM 270; 2025;450000.00;808090YY;Pesado;2050;15.15;false;Operacoes de Minerio;Rua das Flores;1500;29.1500-200;Vila Velha;Praia das Gaivotas;Espirito Santo;ES;Próximo a Churrascaria do Zé
+Mercedes-Benz Accelo 1016;2023;250000.00;707090WW;Medio;4030;10.00;true;Operacoes Rodoviarias;Rua das Flores;1500;29.1500-200;Vila Velha;Praia das Gaivotas;Espirito Santo;ES;Próximo a Churrascaria do Zé
+Mercedes-Benz Accelo 1017;2023;250000.00;606089AA;Medio;4030;10.00;true;Operacoes Rodoviarias;Rua das Flores;1500;29.1500-200;Vila Velha;Praia das Gaivotas;Espirito Santo;ES;Próximo a Churrascaria do Zé
