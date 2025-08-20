@@ -1,13 +1,13 @@
-# 📊 Gestão de Ativos Corpóreos (Tangible Asset Management)
+# Gestão de Ativos Corpóreos (Tangible Asset Management)
 
-## 📌 Descrição
+Descrição
 O projeto **Gestão de Ativos Corpóreos** tem como objetivo o desenvolvimento de um sistema que aplica um modelo de cálculo baseado em premissas e diretrizes objetivas, com foco na **apuração do valor justo dos ativos imobilizados**, em conformidade com normas internacionais de contabilidade (IFRS).
 
 A solução será voltada para empresas com grande volume de ativos — como **frotas, máquinas e equipamentos** — permitindo um **controle patrimonial mais preciso, transparente e automatizado**.
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+Tecnologias Utilizadas
 - **Linguagem**: Java 17  
 - **IDE**: Apache Eclipse  
 - **Frameworks previstos**: Spring Boot, JPA/Hibernate  
@@ -15,9 +15,9 @@ A solução será voltada para empresas com grande volume de ativos — como **f
 
 ---
 
-## 🏗️ Estrutura do Projeto
+# Estrutura do Projeto
 
-### Principais Entidades
+## Principais Entidades
 | Entidade            | Papel     | Descrição |
 |---------------------|----------|-----------|
 | **AssetRegistration** | Mãe       | Representa o ativo em si. Cadastro e informações detalhadas de ativos no inventário. |
@@ -29,7 +29,7 @@ A solução será voltada para empresas com grande volume de ativos — como **f
 
 ---
 
-### Relacionamentos
+## Relacionamentos
 - **AssetRegistration ↔ AssetCategory** → Many-to-One (muitos ativos em uma categoria)  
 - **AssetRegistration ↔ Address** → One-to-One (um ativo tem um endereço principal)  
 - **AssetRegistration ↔ AssetDepreciation** → One-to-Many (um ativo tem vários registros de depreciação)  
@@ -38,7 +38,7 @@ A solução será voltada para empresas com grande volume de ativos — como **f
 
 ---
 
-## 🎯 Objetivos do Projeto
+## Objetivos do Projeto
 - Automatizar o cálculo do valor justo de ativos corpóreos.  
 - Garantir aderência às normas internacionais de contabilidade.  
 - Reduzir riscos de inconsistências em auditorias.  
@@ -47,7 +47,7 @@ A solução será voltada para empresas com grande volume de ativos — como **f
 
 ---
 
-## 👥 Público-Alvo
+## Público-Alvo
 - Empresas de **logística e transporte**  
 - **Construtoras e indústrias** com grande parque de máquinas  
 - **Hospitais e clínicas** com ativos de alto valor  
@@ -55,16 +55,16 @@ A solução será voltada para empresas com grande volume de ativos — como **f
 
 ---
 
-## 📌 Status do Projeto
-🚧 Em desenvolvimento 🚧  
+## Status do Projeto
+- Em desenvolvimento..... 
 
 ---
 
-## 📢 Contribuições
+## Contribuições
 Sugestões e melhorias são bem-vindas!  
 Abra uma **issue** ou envie um **pull request**.  
 
 ---
 
-## 📄 Licença
+## Licença
 Este projeto é distribuído sob a licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
