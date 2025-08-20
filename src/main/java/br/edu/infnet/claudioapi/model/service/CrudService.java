@@ -9,8 +9,5 @@ public interface CrudService <T, ID> {
 	T obtainPutId(ID id);
 	void delete(ID id);
 	List<T> obtainList();
-	
-}
 
-// T -- entidade
-// ID chave primaria
+}

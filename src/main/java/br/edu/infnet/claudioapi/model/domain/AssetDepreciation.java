@@ -1,16 +1,11 @@
 package br.edu.infnet.claudioapi.model.domain;
 
 public class AssetDepreciation extends AssetRegistration {
-	
-	//private String assetId;            // ID do ativo
-	private int depreciationPeriod;    // Período de depreciação em anos
-	private double depreciationRate;   // Taxa de depreciação
-	private boolean fullyDepreciated;  // Indica se o ativo já depreciou totalmente
-	private String referenceMonth;     // Mês de referência do cálculo
-    
-	//TODO construtor do AssetDepreciation
-	
-	//TODO toString do AssetDepreciation
+		           
+	private int depreciationPeriod;    
+	private double depreciationRate;   
+	private boolean fullyDepreciated;  
+	private String referenceMonth;     
     
 	@Override
 	public String obtainVisa() {
@@ -49,5 +44,4 @@ public class AssetDepreciation extends AssetRegistration {
 		this.referenceMonth = referenceMonth;
 	}
 
-	
 }

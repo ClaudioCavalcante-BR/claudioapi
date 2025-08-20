@@ -23,9 +23,6 @@ public class AssetLoader implements ApplicationRunner {
 		this.assetCategoryService = assetCategoryService;
 	}
 	
-	
-	
-	
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		
@@ -40,8 +37,6 @@ public class AssetLoader implements ApplicationRunner {
 			
 			campos = linha.split(";");
 			
-			// TODO Atualizar o arquivo texto para recuperar as infromacoes de address
-			
 			Address address = new Address();
 			address.setStreet(campos[9]);
 			address.setNumber(campos[10]);
@@ -52,9 +47,7 @@ public class AssetLoader implements ApplicationRunner {
 			address.setUf(campos[15]);
 			address.setComplement(campos[16]);
 			
-			
 			AssetCategory assetcategory = new AssetCategory();
-			// TODO Preencher tambem os campos existentes em AssetRegistration
 			
 			assetcategory.setAssetName(campos[0]);
 			assetcategory.setAcquisitionYear(campos[1]);
@@ -74,19 +67,10 @@ public class AssetLoader implements ApplicationRunner {
 			} catch (AssetInvalidException e) {
 				System.err.println("Problema na inclusao do numero do CHASSI: " + e.getMessage());
 			}
-							
-			
-			
-			// TODO imprimir os assetycategory apos a leitura do arquivo
 			
 			linha = vision1.readLine();
-			
 		}
-			//TODO  chamada da funcionalidade de altreaçao = change
-		
-		//System.out.println(" - " + assetCategoryService.obtainList().size());
-		//System.out.println(assetcategory);
-		
+	
 		List<AssetCategory> assetcategorys = assetCategoryService.obtainList();
 		assetcategorys.forEach(System.out::println);
 		

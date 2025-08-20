@@ -8,25 +8,16 @@ import jakarta.persistence.ManyToOne;
 @Entity
 public class AssetCategory extends AssetRegistration{
 		
-	private String categoryName;    // Nome da categoria
-    private int categoryCode;       // Código numérico da categoria
-    private double taxRate;         // Alíquota tributária aplicada
-    private boolean active;         // Categoria ativa ou não
-    private String description;     // Descrição da categoria
-    
+	private String categoryName;    
+    private int categoryCode;       
+    private double taxRate;         
+    private boolean active;        
+    private String description;     
     
     @ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "address_id")
-    private Address address;		// Endereco onde fica o ativo
+    private Address address;		
   
-    // Faltou a associacao de campos da tabela do banco com o atributo da entidade 
-    
-    
-    // TODO construtor padrao do AssetCategory para marcar AssetCategory como ativo
-    
-    // TODO construtor com os campos de AsseyRegistration e os demais campos do AssetCategory
-    
-
 	@Override
 	public String toString() {
 		
@@ -89,7 +80,4 @@ public class AssetCategory extends AssetRegistration{
 	public void setAddress(Address address) {
 		this.address = address;
 	}
-	
-
-	
 }

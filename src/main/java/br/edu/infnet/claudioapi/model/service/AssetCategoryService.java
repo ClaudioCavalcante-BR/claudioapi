@@ -36,42 +36,25 @@ public class AssetCategoryService implements CrudService<AssetCategory, Integer>
 	public AssetCategory include(AssetCategory assetcategory) {
 		
 		
-		// validacao para o assetcategory: validar se o objeto esta nulo e se o nome esta preenchido
-		
 		validate(assetcategory);
-		
-		// validacao especifica: um novo assetcode (CHASSI) nao deve ter ID
 		
 		if(assetcategory.getId() != null && assetcategory.getId() != 0) {
 			throw new IllegalArgumentException("Um novo número do CHASSI nao pode ter um ID na inclusao!");
 		}
-		
-		// validacao para o endereco: se ele foi fornecido
 		
 		return assetRepository.save(assetcategory);
 	}
 
 	@Override
 	public AssetCategory change(Integer id, AssetCategory assetcategory) {
-
-		// se o ID é válido
 		
 		if(id == null || id == 0) {
 			throw new IllegalArgumentException("O ID para alteracao nao pode nulo/zero!");
 		}
 		
-		// validacao para o assetcategory: validar se o objetivo esta nulo e se o nome esta preenchido
-		
 		validate(assetcategory);
 		
-		// verificar se o assetcode existe
-		
 		obtainPutId(id);
-		
-		// validacao para o endereco: se ele foi fornecido
-		
-				
-		// substituicao do assetcode 
 		
 		assetcategory.setId(id);
 		

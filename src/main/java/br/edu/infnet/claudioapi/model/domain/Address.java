@@ -12,16 +12,14 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	private String street;  	// rua
-	private String number;  	// numero do estabelecimento
-	private String zipcode;		// cep
-	private String location;	// localizacao
-	private String neighborhood;// bairro
-	private String state;		// Estado
-	private String uf;			// Unidade da Federacao
-	private String complement;  // Complemento do Endereco
-	
-	   // TODO construtor Address
+	private String street;  	
+	private String number;  	
+	private String zipcode;		
+	private String location;	
+	private String neighborhood;
+	private String state;		
+	private String uf;			
+	private String complement;  
 	
 	@Override
 	public String toString() {
@@ -43,89 +41,71 @@ public class Address {
 		return id;
 	}
 
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 
 	public String getStreet() {
 		return street;
 	}
 
-
 	public void setStreet(String street) {
 		this.street = street;
 	}
-
 
 	public String getNumber() {
 		return number;
 	}
 
-
 	public void setNumber(String number) {
 		this.number = number;
 	}
-
 
 	public String getZipcode() {
 		return zipcode;
 	}
 
-
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
-
 
 	public String getLocation() {
 		return location;
 	}
 
-
 	public void setLocation(String location) {
 		this.location = location;
 	}
-
 
 	public String getNeighborhood() {
 		return neighborhood;
 	}
 
-
 	public void setNeighborhood(String neighborhood) {
 		this.neighborhood = neighborhood;
 	}
-
 
 	public String getState() {
 		return state;
 	}
 
-
 	public void setState(String state) {
 		this.state = state;
 	}
-
 
 	public String getUf() {
 		return uf;
 	}
 
-
 	public void setUf(String uf) {
 		this.uf = uf;
 	}
-
 
 	public String getComplement() {
 		return complement;
 	}
 
-
 	public void setComplement(String complement) {
 		this.complement = complement;
 	}
- 
 }

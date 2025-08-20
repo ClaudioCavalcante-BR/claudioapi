@@ -6,19 +6,17 @@ import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public abstract class AssetRegistration {     // Cadastro de ativos
+public abstract class AssetRegistration {     
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;					// Codigo do ativo
+	private Integer id;					
 	
-	private String assetName;         // Nome do ativo
-	private String acquisitionYear;      // Ano de aquisição
-	private String acquisitionValue;  // Valor de aquisição
-	private String assetCode;         // Código interno do ativo "CHASSI ou SERIE"
-	
-	//TODO criacao construtor de AssetRegistration como assetName, acquisitionYear, acquisitionValue e assetCode
-	
+	private String assetName;         
+	private String acquisitionYear;     
+	private String acquisitionValue;  
+	private String assetCode;         
+
 	@Override
 		public String toString() {
 			return String.format("id=%d, assetName=%s, acquisitionYear=%s, acquisitionValue=%s, assetCode=%s",
@@ -26,7 +24,6 @@ public abstract class AssetRegistration {     // Cadastro de ativos
 		}
 	
 	public abstract String obtainVisa();
-	
 	
 	public Integer getId() {
 		return id;
@@ -67,6 +64,5 @@ public abstract class AssetRegistration {     // Cadastro de ativos
 	public void setAssetCode(String assetCode) {
 		this.assetCode = assetCode;
 	} 
-			
-	
+
 }

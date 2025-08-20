@@ -1,6 +1,5 @@
 package br.edu.infnet.claudioapi.controller;
 
-
 import java.util.List;
 
 import org.springframework.http.HttpStatus;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
 import br.edu.infnet.claudioapi.model.domain.AssetCategory;
 import br.edu.infnet.claudioapi.model.domain.exceptions.AssetInvalidException;
 import br.edu.infnet.claudioapi.model.service.AssetCategoryService;
@@ -23,7 +21,6 @@ import br.edu.infnet.claudioapi.model.service.AssetCategoryService;
 @RestController
 @RequestMapping("/api/assetCategorys")
 public class AssetController {
-	
 	
 	private final AssetCategoryService assetCategoryService;
 	
@@ -49,7 +46,6 @@ public class AssetController {
 				
 	}
 	
-	// mexer
 	@PutMapping(value = "/{id}")
 	public ResponseEntity<AssetCategory> change(@PathVariable Integer id, @RequestBody AssetCategory assetcategory) {
 		AssetCategory assetcategoryChanged = assetCategoryService.change(id, assetcategory);
@@ -63,14 +59,14 @@ public class AssetController {
 		
 		return ResponseEntity.noContent().build();
 	}
-	// mexer
+	
 	@PatchMapping(value = "/{id}/deactivate")
 	public ResponseEntity<AssetCategory> deactivate(@PathVariable Integer id) {
 		AssetCategory assetcategory = assetCategoryService.deactivate(id);
 		
 		return ResponseEntity.ok(assetcategory);
 	}
-	// ok
+
 	@GetMapping
 	public ResponseEntity<List<AssetCategory>> obtainList(){
 		
@@ -82,7 +78,7 @@ public class AssetController {
 		
 		return ResponseEntity.ok(list);
 	}
-	// ok
+	
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<AssetCategory> obtainPutId(@PathVariable Integer id) {
 		
