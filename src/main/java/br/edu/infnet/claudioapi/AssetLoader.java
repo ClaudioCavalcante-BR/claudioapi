@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 import br.edu.infnet.claudioapi.model.domain.Address;
 import br.edu.infnet.claudioapi.model.domain.AssetCategory;
-import br.edu.infnet.claudioapi.model.domain.exceptions.AssetInvalidException;
 import br.edu.infnet.claudioapi.model.service.AssetCategoryService;
 
 @Component
@@ -64,8 +63,10 @@ public class AssetLoader implements ApplicationRunner {
 			
 			try {
 				assetCategoryService.include(assetcategory);
-			} catch (AssetInvalidException e) {
-				System.err.println("Problema na inclusao do numero do CHASSI: " + e.getMessage());
+				System.out.println("[Certo] O Equipamento " + assetcategory.getAssetName() + "incluido com sucesso");
+				
+			} catch (Exception e) {
+				System.err.println(" [ERRO]Problema na inclusao do numero do CHASSI: " + assetcategory.getAssetName() + " : " +e.getMessage());
 			}
 			
 			linha = vision1.readLine();

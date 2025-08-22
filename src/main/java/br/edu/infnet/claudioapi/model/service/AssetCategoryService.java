@@ -1,9 +1,8 @@
 package br.edu.infnet.claudioapi.model.service;
 
 import java.util.List;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import br.edu.infnet.claudioapi.model.domain.AssetCategory;
 import br.edu.infnet.claudioapi.model.domain.exceptions.AssetInvalidException;
@@ -19,7 +18,7 @@ public class AssetCategoryService implements CrudService<AssetCategory, Integer>
 		this.assetRepository = assetRepository;
 	}
 	
-	private final Map<Integer, AssetCategory> mapa = new ConcurrentHashMap<Integer, AssetCategory>();
+	//private final Map<Integer, AssetCategory> mapa = new ConcurrentHashMap<Integer, AssetCategory>();
 
 	
 	private void validate(AssetCategory assetcategory) {
@@ -33,6 +32,7 @@ public class AssetCategoryService implements CrudService<AssetCategory, Integer>
 	}
 	
 	@Override
+	@Transactional	
 	public AssetCategory include(AssetCategory assetcategory) {
 		
 		
@@ -44,8 +44,9 @@ public class AssetCategoryService implements CrudService<AssetCategory, Integer>
 		
 		return assetRepository.save(assetcategory);
 	}
-
+	//Corrigido ----- Remover o mapa e migrar a logica de persistencia para assetcategory
 	@Override
+	@Transactional
 	public AssetCategory change(Integer id, AssetCategory assetcategory) {
 		
 		if(id == null || id == 0) {
@@ -54,17 +55,25 @@ public class AssetCategoryService implements CrudService<AssetCategory, Integer>
 		
 		validate(assetcategory);
 		
-		obtainPutId(id);
+		AssetCategory current = obtainPutId(id);
+	    assetcategory.setId(current.getId());
+
+	    return assetRepository.save(assetcategory);
+			
 		
-		assetcategory.setId(id);
 		
-		mapa.put(assetcategory.getId(), assetcategory);
+		//obtainPutId(id);
 		
-		return assetcategory;
+		//assetcategory.setId(id);
+		
+		//mapa.put(assetcategory.getId(), assetcategory);
+		
+		//return assetcategory;
 		
 	}
 		
 	@Override
+	@Transactional
 	public void delete(Integer id) {
 
 		AssetCategory assetcategory = obtainPutId(id);
@@ -72,7 +81,8 @@ public class AssetCategoryService implements CrudService<AssetCategory, Integer>
 		assetRepository.delete(assetcategory);
 			
 	}
-
+	//Corrigido ----- Remover o mapa e migrar a logica de persistencia para assetcategory
+	@Transactional
 	public AssetCategory deactivate(Integer id) {
 		
 		if(id == null || id == 0) {
@@ -87,10 +97,12 @@ public class AssetCategoryService implements CrudService<AssetCategory, Integer>
 		 }
 		 
 		 assetcategory.setActive(false);
+		 
+		 return assetRepository.save(assetcategory);
 		
-		 mapa.put(assetcategory.getId(), assetcategory);
+		 //mapa.put(assetcategory.getId(), assetcategory);
 			
-		 return assetcategory;
+		 //return assetcategory;
 		 
 	}
 	

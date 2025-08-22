@@ -134,34 +134,34 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "deactivate",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"assetName\": \"Scania P 55\",\n    \"acquisitionYear\": \"2025\",\n    \"acquisitionValue\": \"450000.00\",\n    \"assetCode\": \"909090AA\",\n    \"categoryName\": \"Leve\",\n    \"categoryCode\": 3002,\n    \"taxRate\": 22.35,\n    \"active\": true,\n    \"description\": \"Operacoes Cana de Acucar\",\n    \"address\": {\n        \"street\": \"Rua das Flores - entrada sul\",\n        \"number\": \"1501\",\n        \"zipcode\": \"29.1500-200\",\n        \"location\": \"Vila Velha-ES\"\n    }\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/assetCategorys/4/deactivate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"assetCategorys",
+								"4",
+								"deactivate"
+							]
+						}
+					},
+					"response": []
 				}
 			]
-		},
-		{
-			"name": "deactivate",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"assetName\": \"Scania P 55\",\n    \"acquisitionYear\": \"2025\",\n    \"acquisitionValue\": \"450000.00\",\n    \"assetCode\": \"909090AA\",\n    \"categoryName\": \"Leve\",\n    \"categoryCode\": 3002,\n    \"taxRate\": 22.35,\n    \"active\": true,\n    \"description\": \"Operacoes Cana de Acucar\",\n    \"address\": {\n        \"street\": \"Rua das Flores - entrada sul\",\n        \"number\": \"1501\",\n        \"zipcode\": \"29.1500-200\",\n        \"location\": \"Vila Velha-ES\"\n    }\n}"
-				},
-				"url": {
-					"raw": "http://localhost:8080/api/assetCategorys/4/deactivate",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"assetCategorys",
-						"4",
-						"deactivate"
-					]
-				}
-			},
-			"response": []
 		}
 	]
 }

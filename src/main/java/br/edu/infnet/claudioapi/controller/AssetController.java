@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.edu.infnet.claudioapi.model.domain.AssetCategory;
-import br.edu.infnet.claudioapi.model.domain.exceptions.AssetInvalidException;
 import br.edu.infnet.claudioapi.model.service.AssetCategoryService;
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/assetCategorys")
@@ -29,20 +29,10 @@ public class AssetController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<AssetCategory> include(@RequestBody AssetCategory assetcategory) {
-		
-		try {
-			AssetCategory newassetCategory = assetCategoryService.include(assetcategory);
+	public ResponseEntity<AssetCategory> include(@Valid @RequestBody AssetCategory assetcategory) {
+		AssetCategory newassetCategory = assetCategoryService.include(assetcategory);
 			
-			return ResponseEntity.status(HttpStatus.CREATED).body(newassetCategory);
-			
-			
-		} catch (AssetInvalidException e) {
-			return ResponseEntity.badRequest().build();
-			
-		} catch (Exception e) {
-			return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-		}
+			return ResponseEntity.status(HttpStatus.CREATED).body(newassetCategory);	
 				
 	}
 	
