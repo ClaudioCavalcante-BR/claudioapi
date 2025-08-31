@@ -2,24 +2,21 @@ package br.edu.infnet.claudioapi.model.service;
 
 import java.util.List;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+import jakarta.transaction.Transactional;
 
 import br.edu.infnet.claudioapi.model.domain.AssetCategory;
 import br.edu.infnet.claudioapi.model.domain.exceptions.AssetInvalidException;
 import br.edu.infnet.claudioapi.model.domain.exceptions.AssetNotFoundException;
-import br.edu.infnet.claudioapi.model.repository.AssetRepository;
+import br.edu.infnet.claudioapi.model.repository.AssetCategoryRepository;
 
 @Service
 public class AssetCategoryService implements CrudService<AssetCategory, Integer> {
 	
-	private final AssetRepository assetRepository;
+	private final AssetCategoryRepository assetRepository;
 	
-	public AssetCategoryService(AssetRepository assetRepository) {
+	public AssetCategoryService(AssetCategoryRepository assetRepository) {
 		this.assetRepository = assetRepository;
 	}
-	
-	//private final Map<Integer, AssetCategory> mapa = new ConcurrentHashMap<Integer, AssetCategory>();
-
 	
 	private void validate(AssetCategory assetcategory) {
 		if(assetcategory == null) {
@@ -34,18 +31,15 @@ public class AssetCategoryService implements CrudService<AssetCategory, Integer>
 	@Override
 	@Transactional	
 	public AssetCategory include(AssetCategory assetcategory) {
-		
-		
+	
 		validate(assetcategory);
-		
-		if(assetcategory.getId() != null && assetcategory.getId() != 0) {
+		if(assetcategory.getId() != null && assetcategory.getId() > 0) {
 			throw new IllegalArgumentException("Um novo número do CHASSI nao pode ter um ID na inclusao!");
 		}
 		
 		return assetRepository.save(assetcategory);
 	}
-	//Corrigido ----- Remover o mapa e migrar a logica de persistencia para assetcategory
-	@Override
+	
 	@Transactional
 	public AssetCategory change(Integer id, AssetCategory assetcategory) {
 		
@@ -54,21 +48,9 @@ public class AssetCategoryService implements CrudService<AssetCategory, Integer>
 		}
 		
 		validate(assetcategory);
-		
-		AssetCategory current = obtainPutId(id);
-	    assetcategory.setId(current.getId());
-
+		obtainPutId(id);
+		assetcategory.setId(id);
 	    return assetRepository.save(assetcategory);
-			
-		
-		
-		//obtainPutId(id);
-		
-		//assetcategory.setId(id);
-		
-		//mapa.put(assetcategory.getId(), assetcategory);
-		
-		//return assetcategory;
 		
 	}
 		
@@ -77,11 +59,10 @@ public class AssetCategoryService implements CrudService<AssetCategory, Integer>
 	public void delete(Integer id) {
 
 		AssetCategory assetcategory = obtainPutId(id);
-		
 		assetRepository.delete(assetcategory);
 			
 	}
-	//Corrigido ----- Remover o mapa e migrar a logica de persistencia para assetcategory
+	
 	@Transactional
 	public AssetCategory deactivate(Integer id) {
 		
@@ -90,38 +71,32 @@ public class AssetCategoryService implements CrudService<AssetCategory, Integer>
 		}
 		
 		 AssetCategory assetcategory = obtainPutId(id);
-		 
 		 if(!assetcategory.isActive()) {
 			 System.out.println("O Equipamento" + assetcategory.getAssetCode() + "já está inativo!");
 			 return assetcategory;
 		 }
 		 
 		 assetcategory.setActive(false);
-		 
 		 return assetRepository.save(assetcategory);
 		
-		 //mapa.put(assetcategory.getId(), assetcategory);
-			
-		 //return assetcategory;
-		 
 	}
 	
 	@Override
 	public List<AssetCategory> obtainList() {
-		
-			
-		return assetRepository.findAll();
+			return assetRepository.findAll();
 	}
-
 
 	@Override
 	public AssetCategory obtainPutId(Integer id) {
-		
 		if(id == null || id <= 0) {
-			throw new IllegalArgumentException("O ID para a exclusao nao pode nulo/zero!");
+			throw new IllegalArgumentException("O ID para a busca nao pode nulo/zero!");
 		}		
 				
 		return assetRepository.findById(id).orElseThrow(() -> new AssetNotFoundException("O Equipamento com ID " + id + "nao foi econtrado!"));
 	}
 
+	public AssetCategory obtainPutCode(String assetCode) {
+		
+		return assetRepository.findByassetCode(assetCode).orElseThrow(() -> new AssetNotFoundException("O Numero do Patrimonio " + assetCode + "nao foi econtrado!"));
+	}
 }

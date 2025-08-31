@@ -6,19 +6,21 @@ import java.util.List;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.claudioapi.model.domain.Address;
 import br.edu.infnet.claudioapi.model.domain.AssetCategory;
 import br.edu.infnet.claudioapi.model.service.AssetCategoryService;
 
+@Order(1)
 @Component
-public class AssetLoader implements ApplicationRunner {
+public class AssetCategoryLoader implements ApplicationRunner {
 	
 	
 	private final AssetCategoryService assetCategoryService;
 	
-	public AssetLoader(AssetCategoryService assetCategoryService) {
+	public AssetCategoryLoader(AssetCategoryService assetCategoryService) {
 		this.assetCategoryService = assetCategoryService;
 	}
 	
@@ -29,8 +31,9 @@ public class AssetLoader implements ApplicationRunner {
 		BufferedReader vision1 = new BufferedReader(filea1);
 		
 		String linha = vision1.readLine();
-		
 		String[] campos = null;
+		
+		System.out.println("[AssetCategoryLoader] Iniciando carregamento de dados do ativo do arquivo...");
 				
 		while(linha != null) {
 			
@@ -63,7 +66,7 @@ public class AssetLoader implements ApplicationRunner {
 			
 			try {
 				assetCategoryService.include(assetcategory);
-				System.out.println("[Certo] O Equipamento " + assetcategory.getAssetName() + "incluido com sucesso");
+				System.out.println("[Certo] O Equipamento " + assetcategory.getAssetName() + "  incluido com sucesso!");
 				
 			} catch (Exception e) {
 				System.err.println(" [ERRO]Problema na inclusao do numero do CHASSI: " + assetcategory.getAssetName() + " : " +e.getMessage());
@@ -71,9 +74,13 @@ public class AssetLoader implements ApplicationRunner {
 			
 			linha = vision1.readLine();
 		}
+		
+		System.out.println("[AssetLoader] Carregamento concluido.");
 	
 		List<AssetCategory> assetcategorys = assetCategoryService.obtainList();
+		System.out.println("----- Ativos Carregados ------");
 		assetcategorys.forEach(System.out::println);
+		System.out.println("--------------------------------");
 		
 		vision1.close();
 	}

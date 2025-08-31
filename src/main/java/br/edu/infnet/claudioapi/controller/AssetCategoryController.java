@@ -20,11 +20,11 @@ import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/assetCategorys")
-public class AssetController {
+public class AssetCategoryController {
 	
 	private final AssetCategoryService assetCategoryService;
 	
-	public AssetController(AssetCategoryService assetCategoryService) {
+	public AssetCategoryController(AssetCategoryService assetCategoryService) {
 		this.assetCategoryService = assetCategoryService;
 	}
 	

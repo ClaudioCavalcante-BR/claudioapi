@@ -1,7 +1,7 @@
 Scania P 25;2024;350000.00;99090000-BX;Leve;3001;22.35;true;Operacoes Florestais;Rua das Flores;1500;291500-200;Vila Velha;Praia das Gaivotas;Espirito Santo;ES;Próximo a Churrascaria do Zé
 Volvo VM 270;2025;450000.00;88090000-XA;Pesado;2050;15.15;false;Operacoes de Minerio;Rua das Flores;1500;291500-200;Vila Velha;Praia das Gaivotas;Espirito Santo;ES;Próximo a Churrascaria do Zé
 Mercedes-Benz Accelo 1016;2023;250000.00;69070000-CX;Medio;4030;10.00;true;Operacoes Rodoviarias;Rua das Flores;1500;291500-200;Vila Velha;Praia das Gaivotas;Espirito Santo;ES;Próximo a Churrascaria do Zé
-Mercedes-Benz Accelo 1017;2023;250000.00;36070000-AA;Medio;4030;10.00;true;Operacoes Rodoviarias;Rua das Flores;1500;291500-200;Vila Velha;Praia das Gaivotas;Espirito Santo;ES;Próximo a Churrascaria do Zé
+Mercedes-Benz Accelo 1017;2023;250000.00;36070000-AA;Medio;4031;10.00;true;Operacoes Rodoviarias;Rua das Flores;1500;291500-200;Vila Velha;Praia das Gaivotas;Espirito Santo;ES;Próximo a Churrascaria do Zé
 Volvo FH 540;2022;600000.00;11220000-AX;Pesado;5001;12.50;true;Operacoes de Exportacao;Rua das Flores;1500;291500-200;Vila Velha;Praia das Gaivotas;Espirito Santo;ES;Próximo a Churrascaria do Zé
 MAN TGX 29.480;2024;580000.00;22330000-BY;Pesado;5002;13.00;false;Operacoes de Minerio;Rua das Flores;1500;291500-200;Vila Velha;Praia das Gaivotas;Espirito Santo;ES;Próximo a Churrascaria do Zé
 DAF XF 105;2023;490000.00;33440000-CZ;Pesado;5003;11.75;true;Operacoes de Logistica;Rua das Flores;1500;291500-200;Vila Velha;Praia das Gaivotas;Espirito Santo;ES;Próximo a Churrascaria do Zé

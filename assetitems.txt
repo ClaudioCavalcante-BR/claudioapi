@@ -1,0 +1,65 @@
+AA-2121;Group01-Caminhões Pesados Rodoviários;Caminhao;450000.00;99090000-BX
+AB-2122;Group02-Caminhões Semipesados;Onibus;520000.00;88090000-XA
+BB-2224;Group03-Carretas e Reboques;Trator;180000.00;69070000-CX
+BA-2123;Group04-Caminhões Basculantes;Empilhadeira;95000.00;36070000-AA
+AC-2124;Group05-Caminhões Betoneira;Guindaste;850000.00;11220000-AX
+AD-2125;Group06-Caminhões Tanque;Retroescavadeira;320000.00;22330000-BY
+AE-2126;Group07-Caminhões Guincho;Caminhao;470000.00;33440000-CZ
+AF-2127;Group08-Carretas Prancha;Onibus;530000.00;44550000-DX
+AG-2128;Group09-Caminhões Frigoríficos;Trator;190000.00;55660000-EX
+AH-2129;Group10-Caminhões Cegonha;Empilhadeira;98000.00;66770000-FX
+AI-2130;Group11-Automóveis de Frota Leve;Guindaste;870000.00;77880000-GY
+AJ-2131;Group12-Utilitários Esportivos;Retroescavadeira;330000.00;88990000-HZ
+AK-2132;Group13-Pick-ups Corporativas;Caminhao;460000.00;99110000-IJ
+AL-2133;Group14-SUVs de Frota;Onibus;510000.00;10221000-KL
+AM-2134;Group15-Motocicletas de Frota;Trator;200000.00;11332000-MN
+AN-2135;Group16-Quadriciclos;Empilhadeira;100000.00;12443000-OP
+AO-2136;Group17-Veículos de Apoio Operacional;Guindaste;890000.00;13554000-QR
+AP-2137;Group18-Ambulâncias de Frota;Retroescavadeira;340000.00;14665000-ST
+AQ-2138;Group19-Vans de Transporte;Caminhao;480000.00;15776000-UV
+AR-2139;Group20-Ônibus Urbanos;Onibus;540000.00;16887000-WX
+AS-2140;Group21-Ônibus Rodoviários;Trator;210000.00;17998000-YZ
+AT-2141;Group22-Micro-ônibus;Empilhadeira;97000.00;18119000-AB
+AU-2142;Group23-Tratores Agrícolas;Guindaste;860000.00;19221000-BB
+AV-2143;Group24-Colheitadeiras;Retroescavadeira;325000.00;20332000-CA
+AW-2144;Group25-Plantadeiras;Caminhao;455000.00;21443000-DD
+AX-2145;Group26-Pulverizadores;Onibus;525000.00;22554000-EE
+AY-2146;Group27-Arados Motorizados;Trator;185000.00;23665000-FD
+AZ-2147;Group28-Carretas Agrícolas;Empilhadeira;94000.00;24776000-GG
+BA-2148;Group29-Enfardadeiras;Guindaste;880000.00;25887000-HH
+BB-2149;Group30-Retroescavadeiras;Retroescavadeira;315000.00;26998000-II
+BC-2150;Group31-Escavadeiras Hidráulicas;Caminhao;465000.00;27119000-JJ
+BD-2151;Group32-Pás Carregadeiras;Onibus;515000.00;28221000-KK
+BE-2152;Group33-Motoniveladoras;Trator;195000.00;29332000-LL
+BF-2153;Group34-Tratores de Esteira;Empilhadeira;96000.00;30443000-MM
+BG-2154;Group35-Compactadores de Solo;Guindaste;870000.00;31554000-NN
+BH-2155;Group36-Rolos Compressores;Retroescavadeira;335000.00;32665000-BA
+BI-2156;Group37-Perfuratrizes;Caminhao;475000.00;33776000-PP
+BJ-2157;Group38-Minicarregadeiras;Onibus;535000.00;34887000-QQ
+BK-2158;Group39-Empilhadeiras Elétricas;Trator;205000.00;35998000-RS
+BL-2159;Group40-Empilhadeiras a Combustão;Empilhadeira;99000.00;36119000-ST
+BL-2160;Group41-Guindastes Hidráulicos;Guindaste;460000.00;12443000-OP
+BL-2161;Group42-Guindastes de Torre;Retroescavadeira;510000.00;13554000-QR
+BL-2162;Group43-Plataformas Elevatórias;Caminhao;200000.00;14665000-ST
+BL-2163;Group44-Muncks;Onibus;100000.00;15776000-UV
+BL-2164;Group45-Pórticos Rolantes;Trator;890000.00;16887000-WX
+BL-2165;Group46-Talhas Elétricas;Empilhadeira;340000.00;17998000-YZ
+BL-2166;Group47-Pontes Rolantes;Guindaste;480000.00;18119000-AB
+BL-2167;Group48-Caminhões Fora de Estrada;Retroescavadeira;540000.00;19221000-BB
+BL-2168;Group49-Escavadeiras de Mineração;Caminhao;210000.00;20332000-CA
+BL-2169;Group50-Perfuratrizes de Mineração;Onibus;97000.00;21443000-DD
+BL-2170;Group51-Carregadeiras de Mineração;Trator;860000.00;22554000-EE
+BL-2171;Group52-Draglines;Empilhadeira;325000.00;23665000-FD
+BL-2172;Group53-Shovels Elétricas;Guindaste;455000.00;24776000-GG
+BL-2173;Group54-Carros de Patrulha Interna;Retroescavadeira;525000.00;25887000-HH
+BL-2174;Group55-Veículos de Inspeção Operacional;Caminhao;185000.00;26998000-II
+BL-2175;Group56-Veículos de Serviço Leve;Onibus;94000.00;27119000-JJ
+BL-2176;Group57-Carros de Apoio a Obras;Trator;880000.00;28221000-KK
+BL-2177;Group58-Veículos de Transporte de Funcionários;Empilhadeira;320000.00;29332000-LL
+BL-2178;Group59-Vans de Logística;Guindaste;470000.00;30443000-MM
+BL-2179;Group60-Caminhões de Apoio;Retroescavadeira;530000.00;31554000-NN
+BL-2180;Group61-Carros de Frota Administrativa;Caminhao;190000.00;32665000-BA
+BL-2181;Group62-Scooters Corporativas;Onibus;210000.00;33776000-PP
+BL-2182;Group63-Miniônibus de Apoio;Trator;97000.00;34887000-QQ
+BL-2183;Group64-Veículos Blindados de Frota;Empilhadeira;860000.00;35998000-RS
+BL-2184;Group65-Caminhões de Combate a Incêndio;Guindaste;470000.00;36119000-ST

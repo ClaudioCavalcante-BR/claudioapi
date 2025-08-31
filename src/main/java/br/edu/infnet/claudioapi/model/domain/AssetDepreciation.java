@@ -1,76 +1,58 @@
 package br.edu.infnet.claudioapi.model.domain;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
-import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name = "asset_depreciations")
 public class AssetDepreciation extends AssetRegistration {
 	
+	@NotNull(message = "Informar o ano de depreciacao do periodo.")
+    @Size(min = 3, max = 60, message = "Nome da categoria deve ter entre 3 e 60 caracteres.")
+	private String depreciationPeriod;  // Periodo em anos
 	
-	// RN21 — inteiro primitivo: não aceita null; valida limite com @Min
-    @Column(nullable = false)
-    @Min(value = 1, message = "Período de depreciação deve ser maior que zero.")
-	private int depreciationPeriod;  // Periodo em anos
+	@NotNull(message = "Infromar a Taxa anual de depreciacäo.")
+	private double depreciationRateYear; // Taxa (%)
 	
-    
-    // RN22 — double primitivo: não aceita null; validamos limites e finitude
-    @Column(nullable = false)
-    @PositiveOrZero(message = "Taxa de depreciação deve ser maior ou igual a 0.")
-	private double depreciationRate; // Taxa (%)
-	
-    
-    // RN23 — campo derivado; mantemos como primitivo e recalculamos no ciclo de vida
-    @Column(nullable = false)
-    @JsonProperty(access = JsonProperty.Access.READ_ONLY) // opcional, evita input no payload
+	@NotNull(message = "O equipamento já foi depreciado?  sim/nao.")
 	private boolean fullyDepreciated;  // Já depreciado?
-    
-    
-    // Ex.: "08-2025" (MM-YYYY)
-    @Column(length = 7)
-    @NotBlank(message = "Mês de referência é obrigatório.")
-    @Size(min = 7, max = 7, message = "Mês de referência deve estar no formato MM-YYYY.")
-    @Pattern(
-        regexp = "^(0[1-9]|1[0-2])-\\d{4}$",
-        message = "Mês de referência inválido. Use o formato MM-YYYY (ex.: 08-2025)."
-    )
-    private String referenceMonth; // exemplo "2025-08"    
-    
 	
+	@NotNull(message = "Informar o valor da depreciacao acumulada é obrigatório.")
+    private String valueDepreciatedPeriod; // exemplo "21222.00"    
+    
+	@NotNull(message = "O tipo de depreciacao é obrigatório.")
+	@Enumerated(EnumType.STRING)
+	private AssetDepreciationType depreciationType;
+	    
 	@Override
 	public String toString() {
-	    return String.format("%s, Período: %d anos, Taxa: %.2f%%, %s, Ref: %s",
-	            super.toString(), depreciationPeriod, depreciationRate,fullyDepreciated ? "Depreciado totalmente" : "Em depreciação",
-	            referenceMonth);
-	}
-	
+		return String.format(
+				"AssetDepreciation{%s, depreciationPeriod=%s, depreciationRateYear=%.2f, fullyDepreciated=%s, valueDepreciatedPeriod=%s, depreciationType=%s}", 
+				 super.toString(),depreciationPeriod, depreciationRateYear, fullyDepreciated ? "ativo" : "inativo", valueDepreciatedPeriod, depreciationType);
+	} 
+    
 	@Override
 	public String obtainVisa() {
 		return "AssetDepreciation";
 	}
 
-	public int getDepreciationPeriod() {
+	public String getDepreciationPeriod() {
 		return depreciationPeriod;
 	}
 
-	public void setDepreciationPeriod(int depreciationPeriod) {
+	public void setDepreciationPeriod(String depreciationPeriod) {
 		this.depreciationPeriod = depreciationPeriod;
 	}
 
-	public double getDepreciationRate() {
-		return depreciationRate;
+	public double getDepreciationRateYear() {
+		return depreciationRateYear;
 	}
 
-	public void setDepreciationRate(double depreciationRate) {
-		this.depreciationRate = depreciationRate;
+	public void setDepreciationRateYear(double depreciationRateYear) {
+		this.depreciationRateYear = depreciationRateYear;
 	}
 
 	public boolean isFullyDepreciated() {
@@ -81,12 +63,19 @@ public class AssetDepreciation extends AssetRegistration {
 		this.fullyDepreciated = fullyDepreciated;
 	}
 
-	public String getReferenceMonth() {
-		return referenceMonth;
+	public String getValueDepreciatedPeriod() {
+		return valueDepreciatedPeriod;
 	}
 
-	public void setReferenceMonth(String referenceMonth) {
-		this.referenceMonth = referenceMonth;
+	public void setValueDepreciatedPeriod(String valueDepreciatedPeriod) {
+		this.valueDepreciatedPeriod = valueDepreciatedPeriod;
 	}
 
+	public AssetDepreciationType getDepreciationType() {
+		return depreciationType;
+	}
+
+	public void setDepreciationType(AssetDepreciationType depreciationType) {
+		this.depreciationType = depreciationType;
+	}
 }

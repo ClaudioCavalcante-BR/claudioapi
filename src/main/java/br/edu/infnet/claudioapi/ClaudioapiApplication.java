@@ -9,5 +9,4 @@ public class ClaudioapiApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ClaudioapiApplication.class, args);
 	}
-
 }

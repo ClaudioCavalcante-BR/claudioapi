@@ -15,42 +15,35 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	// RN13 Logradouro do endereço
     @NotBlank(message = "Rua é obrigatória.")
     @Size(min = 3, max = 120, message = "Rua deve ter entre 3 e 120 caracteres.")
 	private String street;
-    
-    // RN14 Número do endereço
+
     @NotBlank(message = "Número do endereço é obrigatório.")
     @Size(max = 10, message = "Número não pode exceder 10 caracteres.")
     private String number;
 
-    // RN15 CEP formato
     @NotBlank(message = "CEP é obrigatório.")
     @Pattern(regexp = "^[0-9]{6}-[0-9]{3}$", message = "CEP inválido. Use o formato 000000-000.")   
 	private String zipcode;	
     
-    // RN16 Cidade/Localização
     @NotBlank(message = "Cidade/Localização é obrigatória.")
     @Size(min = 2, max = 80, message = "Cidade deve ter entre 2 e 80 caracteres.")    
 	private String location;
     
-    // RN19 Bairro (opcional com limite)
     @Size(max = 80, message = "Bairro não pode exceder 80 caracteres.")
 	private String neighborhood;
     
-    // RN18 Estado–UF
     @NotBlank(message = "O Nome do Estado por extenso é obrigatório.")
+    @Size(min = 3, max = 50, message = "Estado deve ter entre 3 e 50 caracteres.")
 	private String state;
     
-    // RN17 UF válida
     @NotBlank(message = "A sigla da Unidade Federativa (UF) é obrigatória.")
     @Pattern(regexp = "^(AC|AL|AM|AP|BA|CE|DF|ES|GO|MA|MG|MS|MT|PA|PB|PE|PI|PR|RJ|RN|RO|RR|RS|SC|SE|SP|TO)$", 
              message = "UF inválida. Informe uma unidade federativa válida.")
 	private String uf;
 	
-    // RN20 Complemento (opcional com limite)
-    @Size(max = 120, message = "Complemento não pode exceder 120 caracteres.")
+    
 	private String complement;  
 	
 	@Override

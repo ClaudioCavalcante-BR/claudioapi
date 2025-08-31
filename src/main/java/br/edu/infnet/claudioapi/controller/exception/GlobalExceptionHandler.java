@@ -17,7 +17,6 @@ import br.edu.infnet.claudioapi.model.domain.exceptions.AssetNotFoundException;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 	
-	// TRatamento para excessóes de validacao
 	@ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<Map<String, String>> handleValidationExceptions(MethodArgumentNotValidException ex) {
         Map<String, String> errors = new HashMap<>();
@@ -30,54 +29,45 @@ public class GlobalExceptionHandler {
 
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }	
-		
-	// Tratamento para excessoes de negocio: AssetCategory
-	     // AssetCategory invalido
 	
 	@ExceptionHandler(AssetInvalidException.class)
     public ResponseEntity<Map<String, String>> handleValidationExceptions(AssetInvalidException ex) {
         Map<String, String> errors = new HashMap<>();
         
-        errors.put("Data/hora", LocalDateTime.now().toString());
+        errors.put("Datahora", LocalDateTime.now().toString());
         errors.put("Status", HttpStatus.BAD_REQUEST.toString());
         errors.put("Mensagem", ex.getMessage());
         
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }	
-	
-	   // AssetCategory nao encontrado
 	
 	@ExceptionHandler(AssetNotFoundException.class)
     public ResponseEntity<Map<String, String>> handleValidationExceptions(AssetNotFoundException ex) {
         Map<String, String> errors = new HashMap<>();
         
-        errors.put("Data/hora", LocalDateTime.now().toString());
+        errors.put("Datahora", LocalDateTime.now().toString());
         errors.put("Status", HttpStatus.NOT_FOUND.toString());
         errors.put("Mensagem", ex.getMessage());
         
         return new ResponseEntity<>(errors, HttpStatus.NOT_FOUND);
     }	
-			
-	// Tratamento para excessoes de argumentos invalidos: IllegalArgumentException
 	
 	@ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<Map<String, String>> handleValidationExceptions(IllegalArgumentException ex) {
         Map<String, String> errors = new HashMap<>();
         
-        errors.put("Data/hora", LocalDateTime.now().toString());
+        errors.put("Datahora", LocalDateTime.now().toString());
         errors.put("Status", HttpStatus.BAD_REQUEST.toString());
         errors.put("Mensagem", ex.getMessage());
         
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
     }	
-		
-	// Tratamento para excessoes genericas
 	
 	@ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, String>> handleValidationExceptions(Exception ex) {
         Map<String, String> errors = new HashMap<>();
         
-        errors.put("Data/hora", LocalDateTime.now().toString());
+        errors.put("Datahora", LocalDateTime.now().toString());
         errors.put("Status", HttpStatus.INTERNAL_SERVER_ERROR.toString());
         errors.put("Mensagem", ex.getMessage());
         
